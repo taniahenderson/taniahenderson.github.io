@@ -1,0 +1,8 @@
+@font-face {
+	font-family: 'Arial MT';
+	src: url(../../assets/fonts/Arial%20MT-9bb56e2f4357df5289eef6857b711691.woff2) format('woff2'),
+	url(../../assets/fonts/Arial%20MT-5bc00b9cba1fa5000d54f2eff1855ab7.woff) format('woff');
+	font-weight: 900;
+	font-style: normal;
+	font-display: swap;
+}

@@ -1,0 +1,8 @@
+@font-face {
+	font-family: 'Arial Th';
+	src: url(../../assets/fonts/Arial%20Th-ea32cee5094ce6173024e8ff59872ecd.woff2) format('woff2'),
+	url(../../assets/fonts/Arial%20Th-d85f74c3190c490d317f998aabe883d2.woff) format('woff');
+	font-weight: normal;
+	font-style: normal;
+	font-display: swap;
+}
