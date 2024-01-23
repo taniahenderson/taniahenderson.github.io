@@ -1,0 +1,323 @@
+body {
+  /*position: relative;*/
+  font-family: Helvetica, Arial, sans-serif;
+  margin: 0px;
+  padding: 0px;
+}
+
+.background-container {
+  background-image: url("../../assets/img/pandotrees.jpg");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  position: fixed;
+  top: -30px;
+  left: 0;
+  width: 100%;
+  bottom: 0px;
+}
+
+.nav-bar {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  top: 0px;
+  height: 100px;
+  width: 100%;
+  background-color: rgba(255, 255, 255, 0.8);
+  z-index: 2;
+}
+
+.title-container {
+  padding-right: 40px;
+  display: flex;
+  align-items: center;
+}
+
+.title-container img {
+  margin-top: 5px;
+  margin-right: 5px;
+  height: 35px;
+  width: 35px;
+}
+
+#pandosys {
+  font-size: 35px;
+  color: black;
+  text-align: center;
+  margin-top: 8px;
+  margin-bottom: 5px;
+}
+
+.nav-bar ul {
+  display: flex;
+  list-style: none;
+  padding: 0px;
+  margin: 0px 0px 8px;
+}
+
+.nav-bar li {
+  margin: 0px 0px 15px;
+}
+
+.nav-bar li, .nav-bar a {
+  color: black;
+  text-decoration: none;
+  padding: 4px 25px;
+  font-size: 22px;
+}
+
+.separator {
+  content: "";
+  border-left: 2px solid var(--bs-gray-700);
+}
+
+.nav-bar span {
+  height: 40px;
+}
+
+.footer span {
+  margin-top: -1px;
+  height: 30px;
+}
+
+.nav-bar a:hover {
+  color: rgb(244, 156, 12);
+}
+
+#about, #products, #help, #privacy, #legal {
+  cursor: pointer;
+  text-decoration: none;
+}
+
+#aboutPage, #productsPage, #helpPage, #privacyPage, #legalPage {
+  position: fixed;
+  bottom: -100%;
+  left: 0px;
+  width: 100%;
+  height: calc(100% - 100px);
+  background-color: rgba(0, 0, 0, 0);
+  color: white;
+  transition: bottom 0.8s ease-in;
+  display: flex;
+  padding: 20px;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  overflow-y: auto;
+}
+
+#helpPage, #privacyPage, #legalPage {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  padding: 10px 400px 60px;
+}
+
+#helpPage {
+  align-items: center;
+  /*justify-content: center;*/
+}
+
+#privacyPage h2, #legalPage h2 {
+  font-size: 18px;
+}
+
+#privacyPage p, #legalPage p {
+  font-size: 14px;
+}
+
+#privacyPage ul, #legalPage ul {
+  display: flex;
+  flex-direction: column;
+  list-style-type: square;
+  padding-bottom: 8px;
+}
+
+#privacyPage li, #legalPage li {
+  margin: 0px;
+  padding: 0px;
+  color: white;
+  font-size: 14px;
+}
+
+#privacyPage a, #legalPage a {
+  padding: 0px;
+  color: var(--bs-link-color);
+  font-size: 14px;
+}
+
+#privacyPage a:hover {
+  color: rgb(244, 156, 12);
+}
+
+.footer {
+  overflow: hidden;
+  position: absolute;
+  bottom: 0px;
+  height: 50px;
+  width: 100%;
+  background-color: rgba(255, 255, 255, 0.8);
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 10px;
+}
+
+.word-links {
+  display: flex;
+  list-style: none;
+  padding: 0px;
+  margin: 0px;
+}
+
+.word-links a {
+  font-size: 18px;
+  margin: 5px 15px 2px;
+  text-decoration: none;
+}
+
+.word-links a:hover {
+  color: rgb(244, 156, 12);
+}
+
+.logo-links {
+  display: flex;
+  align-self: flex-end;
+  list-style: none;
+  margin-top: -30px;
+}
+
+.logo-links img {
+  width: 25px;
+  height: 25px;
+  margin: 0px 20px 0px 0px;
+}
+
+@media screen and (max-width: 600px) {
+  #privacyPage, #legalPage {
+    padding: 10px 10px 60px;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  #privacyPage h2, #legalPage h2 {
+    font-size: 14px;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  #privacyPage p, #privacyPage ul, #legalPage p, #legalPage ul {
+    font-size: 10px;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .background-container {
+    bottom: -25px;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .nav-bar {
+    height: 75px;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .title-container {
+    padding-right: 26px;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .title-container img {
+    height: 21px;
+    width: 21px;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  #pandosys {
+    font-size: 21px;
+    margin: 8px 8px 8px 0px;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .nav-bar ul {
+    margin: 0px 0px 0px;
+    padding: 0px 0px 0px;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .nav-bar li, .nav-bar a {
+    font-size: 14px;
+    padding: 6px 12px;
+    margin: 0px 0px 4px;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .nav-bar span {
+    margin-top: 4px;
+    height: 25px;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .footer span {
+    margin-top: 3px;
+    height: 20px;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .footer {
+    height: 65px;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  #pandosysF {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  #aboutPage, #productsPage, #helpPage {
+    height: calc(100% - 75px);
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .word-links {
+    align-self: center;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .word-links a {
+    font-size: 11px;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .logo-links {
+    display: flex;
+    align-self: center;
+    margin-top: 0px;
+    margin-bottom: 1px;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .logo-links img {
+    width: 15px;
+    height: 15px;
+  }
+}
+
