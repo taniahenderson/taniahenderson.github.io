@@ -27,26 +27,44 @@ document.getElementById('about').addEventListener('click', function(e) {
     toggleWall('about', 'aboutPage');
 });
 
-//Products
-document.getElementById('products').addEventListener('click', function(e) {
-    e.preventDefault();
-    toggleWall('products', 'productsPage');
-});
-
 //Help Center
 document.getElementById('help').addEventListener('click', function(e) {
     e.preventDefault();
     toggleWall('help', 'helpPage');
 });
 
-//Privacy Policy
-document.getElementById('privacy').addEventListener('click', function(e) {
-    e.preventDefault();
-    toggleWall('privacy', 'privacyPage');
-});
 
-//Legal Stuff
-document.getElementById('legal').addEventListener('click', function(e) {
-    e.preventDefault();
-    toggleWall('legal', 'legalPage');
-});
+
+//Pop-up boxes for footer bar links
+var privModal = document.getElementById("privModal");
+var legalModal = document.getElementById("legalModal");
+
+var privLnk = document.getElementById("privacy");
+var legalLnk = document.getElementById("legal");
+
+var spanPriv = document.getElementById("closePriv");
+var spanLegal = document.getElementById("closeLegal");
+
+privLnk.onclick = function() {
+  privModal.style.display = "block";
+}
+
+legalLnk.onclick = function() {
+  legalModal.style.display = "block";
+}
+
+spanPriv.onclick = function() {
+  privModal.style.display = "none";
+}
+
+spanLegal.onclick = function() {
+  legalModal.style.display = "none";
+}
+
+window.onclick = function(event) {
+  if (event.target == privModal) {
+    privModal.style.display = "none";
+  } else if (event.target == legalModal) {
+    legalModal.style.display = "none";
+  }
+}
