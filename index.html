@@ -50,7 +50,7 @@
 </div>
 
 <div id="helpPage">
-    <form id="contactForm">
+    <form action="info.php" method="post" enctype="multipart/form-data" id="contactForm">
         <fieldset>
             <legend>Contact Form</legend>
             <div class="fields-row">
@@ -81,7 +81,9 @@
                 <option value="userReport">Inappropriate user behaviour</option>
                 <option value="enquiry">General enquiry</option>
             </select><br>
-            <textarea name="message" style="width:400px; height:200px;" placeholder="Your message here..." required></textarea><br><br>
+            <textarea name="message" style="width:400px; height:200px;" placeholder="Your message here..." required></textarea><br>
+            <label for="uploadfile">Select a file (optional):</label>
+            <input type="file" id="uploadfile" name="uploadfile"><br><br>
             <input type="submit" value="Submit">
         </fieldset>
     </form>
