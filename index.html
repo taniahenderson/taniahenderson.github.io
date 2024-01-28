@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
     <title>Pando Systems</title>
     <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/css/style.css">
     <link rel="stylesheet" href="assets/css/Arial.css">
     <link rel="stylesheet" href="assets/css/Arial%20GEO.css">
     <link rel="stylesheet" href="assets/css/Arial%20MT.css">
@@ -15,88 +16,155 @@
     <link rel="stylesheet" href="assets/css/Helvetica.css">
     <link rel="stylesheet" href="assets/css/Navbar-Centered-Brand-Dark-icons.css">
     <link rel="stylesheet" href="assets/css/style.css">
+    <script src="assets/jq/jquery-3.7.1.min.js"></script>
 </head>
 
-<body><!-- Background image of the Pando trees system -->
-<div class="background-container"></div><header class="header">
-    <div class="nav-bar">
+<body>
+<!-- Background image of the Pando trees system -->
+<div class="background-container"></div>
+    <header class="header">
         <div class="title-container">
             <!-- Novais, R. (2022) Aspen grove, Pando tree, fall season. stock photo, iStock. Fishlake National Forest. Available at: https://www.istockphoto.com/photo/aspen-grove-pando-tree-fall-season-gm1442566346-481864211 (Accessed: January 2024). -->
             <img src="assets/img/pando_systems_logo.png" alt="Pando Systems"/>
             <h1 id="pandosys">Pando Systems</h1>
         </div>
-        <div>
-        <!-- Tabs -->
+        <div class="nav-bar">
+            <!-- Tabs -->
+            <div class="tabs">
+                <ul>
+                    <li><a href="#" id="about">About Us</a></li>
+                    <span class="separator"></span>
+                    <li class="dropdown">
+                        <a href="#" data-toggle="dropdown">Products</a>
+                        <div class="dropdown-menu">
+                            <hr class="hr">
+                            <a class="dropdown-item" href="https://sketch.pandosystems.uk/" target="_blank">Pando Sketch</a>
+                            <hr class="hr">
+                            <p class="dropdown-item" href="#">Coming soon!</p>
+                        </div>
+                    </li>
+                    <span class="separator"></span>
+                    <li><a href="#" id="help">Help Center</a></li>
+                </ul>
+            </div>
+        </div>
+    </header>
+</div>
+
+<!-- Pop-ups -->
+<div id="about-page">
+    <div class="page-content">
+        <div id="top-total">
+            <div id="top-text">
+                <h2>Who We Are</h2>
+                <p>Welcome to Pando Systems, where innovation meets collaboration. At the heart of our mission is the commitment to empower educators and students alike through our cutting-edge web application, which has been crafted to illustrate that teaching and student engagement can transcend the confines of a traditional classroom.</p>
+                <p>We strive to redefine the educational experience by providing a seamless and interactive online environment that promotes creativity, communication, and cooperative learning. At Pando Systems, we envisioned a digital collaboration platform that could host a diverse community where ideas can effortlessly flourish and be freely exchanged.</p><br>
+                <h2>Our Products</h2>
+                <h3>Pando Sketch</h3>
+                <p>Featuring an intuitive interface, Pando Sketch enables its users to access a dynamic visual workspace seamlessly integrated with real-time chat functionality. It’s more than just a tool; it’s a gateway to a world where educators and learners can organise, create, share, and collaborate effortlessly.</p>
+            </div>
+            <img src="assets/img/login.png" alt="Pando Sketch login page"/>
+        </div>
+        <div class="list-container">
             <ul>
-                <li><a href="#" id="about">About Us</a></li>
-                <span class="separator"></span>
-                <li class="dropdown">
-                    <a href="#" class="btn" data-toggle="dropdown">Products</a>
-                    <div class="dropdown-menu">
-                        <hr class="hr">
-                        <a class="dropdown-item" href="https://sketch.pandosystems.uk/" target="_blank">Pando Sketch</a>
-                        <hr class="hr">
-                        <p class="dropdown-item" href="#">Coming soon!</p>
+                <li class="headings"><a href="#" onClick='toggleText("learning");'>Learning</a>
+                    <div class="subheadings" id="learning">
+                        <ul>
+                            <li><p>Work on group projects, brainstorm big ideas, seek help on challenging topics; our platform encourages peer-to-peer interaction and teamwork</p></li>
+                        </ul>
                     </div>
                 </li>
-                <span class="separator"></span>
-                <li><a href="#" id="help">Help Center</a></li>
+                <li class="headings"><a href="#" onClick='toggleText("teams");'>Built for teams</a>
+                    <div class="subheadings" id="teams">
+                        <ul>
+                            <li><p>Invite your students to your online classroom, get together with your friends to create a fun workspace- CONTINUE</p></li>
+                        </ul>
+                    </div>
+                </li>
+                <li class="headings"><a href="#" onClick='toggleText("device");'>Use on any device</a>
+                    <div class="subheadings" id="device">
+                        <ul>
+                            <li><p>Available to use on any common web browser (Google Chrome, Mozilla Firefox, Microsoft Edge, Apple Safari) and on mobile/tablet devices (Google Android, Apple iOS, Microsoft Windows)</p></li>
+                        </ul>
+                    </div>
+                </li>
+            </ul>
+            <ul>
+                <li class="headings"><a href="#" onClick='toggleText("teaching");'>Teaching</a>
+                    <div class="subheadings" id="teaching">
+                        <ul>
+                            <li><p>Organised, flexible workspace to fashion lessons, demonstrate complex concepts, and interact with students in real time</p></li>
+                            <li><p>Enhances engagement, allowing teachers to not only present information but also to receive immediate feedback and adjust their teaching methods on the fly</p></li>
+                        </ul>
+                    </div>
+                </li>
+                <li class="headings"><a href="#" onClick='toggleText("simple");'>Super simple</a>
+                    <div class="subheadings" id="simple">
+                        <ul>
+                            <li><p>Utilises an intuitive and accessible interface, ensuring that users of all technical abilities can engage and contribute</p></li>
+                        </ul>
+                    </div>
+                </li>
+                <li class="headings"><a href="#" onClick='toggleText("security");'>Security</a>
+                    <div class="subheadings" id="security">
+                        <ul>
+                            <li><p>Through the use of admin controls, you can control who your workspace is available to - restrict access to your classroom, share only with selected peers, or display your Project on our <em>Explore</em> page to connect with the global community</p></li>
+                        </ul>
+                    </div>
+                </li>
             </ul>
         </div>
     </div>
-</header><!-- Pop-ups -->
-<div id="aboutPage">
-    <p>Example text</p>
 </div>
 
-<div id="helpPage">
-    <form action="info.php" method="post" enctype="multipart/form-data" id="contactForm">
+<div id="help-page">
+    <form id="contact-form">
         <fieldset>
-            <legend>Contact Form</legend>
+        <legend>Contact Form</legend>
             <div class="fields-row">
                 <div class="fields-pair">
-                    <label for="fname">First name:</label>
-                    <input type="text" id="fname" name="fname" placeholder="Required" required>
+                    <label for="first-name">First name:</label>
+                    <input type="text" id="first-name" name="first-name" placeholder="Required" required>
                 </div>
                 <div class="fields-pair">
-                    <label for="lname">Last name:</label>
-                    <input type="text" id="lname" name="lname" placeholder="Required" required>
+                    <label for="last-name">Last name:</label>
+                    <input type="text" id="last-name" name="last-name" placeholder="Required" required>
                 </div>
             </div>
             <div class="fields-row">
                 <div class="fields-pair">
-                    <label for="emailAddress">Email address:</label>
-                    <input type="email" id="emailadd" name="emailadd" placeholder="Required" required>
+                    <label for="email-address">Email address:</label>
+                    <input type="email" id="email-address" name="email-address" placeholder="Required" required>
                 </div>
                 <div class="fields-pair">
                     <label for="username">Username:</label>
-                    <input type="text" id="usernameInput" name="usernameInput" placeholder="Optional">
+                    <input type="text" id="username" name="username" placeholder="Optional">
                 </div>
             </div><br>
-            <label for="reasons">Reason for contact:</label><br>
-            <select id="reasons" name="reasons">
-                <option value="feedbackApp">Feedback (App)</option>
-                <option value="feedbackWeb">Feedback (Website)</option>
-                <option value="bugReport">Bug report</option>
-                <option value="userReport">Inappropriate user behaviour</option>
-                <option value="enquiry">General enquiry</option>
+            <label for="reason">Reason for contact:</label><br>
+            <select id="reason" name="reason">
+                <option value="feedback-app">Feedback (App)</option>
+                <option value="feedback-web">Feedback (Website)</option>
+                <option value="bug-report">Bug report</option>
+                <option value="user-report">Inappropriate user behaviour</option>
+                <option value="gen-enquiry">General enquiry</option>
             </select><br>
-            <textarea name="message" style="width:400px; height:200px;" placeholder="Your message here..." required></textarea><br>
-            <label for="uploadfile">Select a file (optional):</label>
-            <input type="file" id="uploadfile" name="uploadfile"><br><br>
-            <input type="submit" value="Submit">
+            <textarea id="message" name="message" placeholder="Your message here..." required></textarea><br>
+            <label for="upload-file">Select a file (optional):</label>
+            <input type="file" id="upload-file" name="upload-file"><br><br>
+            <input type="button" value="Submit" onClick="displayInfo()">
         </fieldset>
     </form>
 </div>
 
 
 <!-- Template credit given within text -->
-<div id="privModal" class="modal">
+<div id="privacy-modal" class="modal">
     <div class="modal-content">
-        <span id="closePriv">&times;</span>
+        <span id="close-privacy">&times;</span>
         <h2>Privacy Policy of Pando Systems</h2>
-        <p>Pando Systems operates the www.pandosystems.com website, which provides the SERVICE. This page is used to inform website visitors regarding our policies with the collection, use, and disclosure of Personal Information if anyone decided to use our Service, the Pando Systems website. If you choose to use our Service, then you agree to the collection and use of information in relation with this policy. The Personal Information that we collect are used for providing and improving the Service. We will not use or share your information with anyone except as described in this Privacy Policy.</p>
-        <p>The terms used in this Privacy Policy have the same meanings as in our Terms and Conditions, which is accessible at www.pandosystems.com, unless otherwise defined in this Privacy Policy.</p>
+        <p>Pando Systems operates the www.pandosystems.uk website, which provides the SERVICE. This page is used to inform website visitors regarding our policies with the collection, use, and disclosure of Personal Information if anyone decided to use our Service, the Pando Systems website. If you choose to use our Service, then you agree to the collection and use of information in relation with this policy. The Personal Information that we collect are used for providing and improving the Service. We will not use or share your information with anyone except as described in this Privacy Policy.</p>
+        <p>The terms used in this Privacy Policy have the same meanings as in our Terms and Conditions, which is accessible at www.pandosystems.uk, unless otherwise defined in this Privacy Policy.</p>
         <h2>Information Collection and Use</h2>
         <p>For a better experience while using our Service, we may require you to provide us with certain personally identifiable information, including but not limited to your name, phone number, and postal address. The information that we collect will be used to contact or identify you.</p>
         <h2>Log Data</h2>
@@ -123,15 +191,17 @@
         <p>Our Privacy Policy was created with the help of the <a href="https://www.privacypolicytemplate.net">Privacy Policy Template</a>.</p>
         <h2>Contact Us</h2>
         <p>If you have any questions or suggestions about our Privacy Policy, do not hesitate to contact us:</p>
-        <p>By email: admin@pandosystems.com</p>
-        <p>By the Help Center form</p>
+        <ul style="list-style-type: none;">
+            <li><p>By email: admin@pandosystems.com</p></li>
+            <li><p>By the Help Center form</p></li>
+        </ul>
     </div>
 </div>
 
 
-<div id="legalModal" class="modal">
+<div id="legal-modal" class="modal">
     <div class="modal-content">
-        <span id="closeLegal">&times;</span>
+        <span id="close-legal">&times;</span>
             <h2>Terms and Conditions</h2>
             <p>Please read these terms and conditions carefully before using Our Service.</p>
             <h2>Interpretation and Definitions</h2>
@@ -140,17 +210,17 @@
             <h3>Definitions</h3>
             <p>For the purposes of these Terms and Conditions:</p>
             <ul>
-                <li><strong>Application</strong> means the software program provided by the Company downloaded by You on any electronic device, named Pando Sketch</li>
-                <li><strong>Application Store</strong> means the digital distribution service operated and developed by Apple Inc. (Apple App Store) or Google Inc. (Google Play Store) in which the Application has been downloaded.</li>
-                <li><strong>Affiliate</strong> means an entity that controls, is controlled by or is under common control with a party, where “control” means ownership of 50% or more of the shares, equity interest or other securities entitled to vote for election of directors or other managing authority.</li>
-                <li><strong>Country</strong> refers to:  United Kingdom</li>
-                <li><strong>Company</strong> (referred to as either “the Company”, “We”, “Us”; or “Our” in this Agreement) refers to Pando Systems, Heriot-Watt University, Edinburgh Campus, Edinburgh, Scotland, EH14 4AS.</li>
-                <li><strong>Device</strong> means any device that can access the Service such as a computer, a mobile phone or a digital tablet.</li>
-                <li><strong>Service</strong> refers to the Application or the Website or both.</li>
-                <li><strong>Terms and Conditions</strong> (also referred as “Terms”) mean these Terms and Conditions that form the entire agreement between You and the Company regarding the use of the Service. This Terms and Conditions agreement has been created with the help of the <a href="https://www.termsfeed.com/terms-conditions-generator/" target="_blank">Terms and Conditions Generator</a>.</li>
-                <li><strong>Third-party Social Media Service</strong> means any services or content (including data, information, products or services) provided by a third-party that may be displayed, included or made available by the Service.</li>
-                <li><strong>Website</strong> refers to Pando Systems, accessible from www.pandosystems.com</li>
-                <li><strong>You</strong> means the individual accessing or using the Service, or the company, or other legal entity on behalf of which such individual is accessing or using the Service, as applicable.</li>
+                <li><p><strong>Application</strong> means the software program provided by the Company downloaded by You on any electronic device, named Pando Sketch</p></li>
+                <li><p><strong>Application Store</strong> means the digital distribution service operated and developed by Apple Inc. (Apple App Store) or Google Inc. (Google Play Store) in which the Application has been downloaded.</p></li>
+                <li><p><strong>Affiliate</strong> means an entity that controls, is controlled by or is under common control with a party, where “control” means ownership of 50% or more of the shares, equity interest or other securities entitled to vote for election of directors or other managing authority.</p></li>
+                <li><p><strong>Country</strong> refers to:  United Kingdom</p></li>
+                <li><p><strong>Company</strong> (referred to as either “the Company”, “We”, “Us”; or “Our” in this Agreement) refers to Pando Systems, Heriot-Watt University, Edinburgh Campus, Edinburgh, Scotland, EH14 4AS.</p></li>
+                <li><p><strong>Device</strong> means any device that can access the Service such as a computer, a mobile phone or a digital tablet.</p></li>
+                <li><p><strong>Service</strong> refers to the Application or the Website or both.</p></li>
+                <li><p><strong>Terms and Conditions</strong> (also referred as “Terms”) mean these Terms and Conditions that form the entire agreement between You and the Company regarding the use of the Service. This Terms and Conditions agreement has been created with the help of the <a href="https://www.termsfeed.com/terms-conditions-generator/" target="_blank">Terms and Conditions Generator</a>.</p></li>
+                <li><p><strong>Third-party Social Media Service</strong> means any services or content (including data, information, products or services) provided by a third-party that may be displayed, included or made available by the Service.</p></li>
+                <li><p><strong>Website</strong> refers to Pando Systems, accessible from www.pandosystems.uk</p></li>
+                <li><p><strong>You</strong> means the individual accessing or using the Service, or the company, or other legal entity on behalf of which such individual is accessing or using the Service, as applicable.</p></li>
             </ul>
             <h2>Acknowledgment</h2>
             <p>These are the Terms and Conditions governing the use of this Service and the agreement that operates between You and the Company. These Terms and Conditions set out the rights and obligations of all users regarding the use of the Service.</p>
@@ -192,8 +262,10 @@
             <p>By continuing to access or use Our Service after those revisions become effective, You agree to be bound by the revised terms. If You do not agree to the new terms, in whole or in part, please stop using the website and the Service.</p>
             <h2>Contact Us</h2>
             <p>If you have any questions about these Terms and Conditions, You can contact us:</p>
-            <p>By email: admin@pandosystems.com</p>
-            <p>By the Help Center form</p>
+            <ul style="list-style-type: none;">
+                <li><p>By email: admin@pandosystems.com</p></li>
+                <li><p>By the Help Center form</p></li>
+            </ul>
     </div>
 </div>
 
@@ -212,9 +284,8 @@
         <li><a href="https://www.instagram.com"><img src="assets/img/Instalogo.png" alt="Instagram"/></a></li>
     </ul>
 </footer>
-    <script src="assets/bootstrap/js/bootstrap.min.js"></script>
-    <script src="assets/js/script.js"></script>
-    <script src="assets/js/script3.js"></script>
+<script src="assets/js/script.js"></script>
+<script src="assets/bootstrap/js/bootstrap.min.js"></script>
 </body>
 
 </html>

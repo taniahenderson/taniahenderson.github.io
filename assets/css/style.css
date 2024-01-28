@@ -17,30 +17,23 @@ body {
 }
 
 .header {
-  opacity: 0.8;
-}
-
-.nav-bar {
+  position: relative;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  position: absolute;
-  top: 0px;
-  height: 100px;
-  width: 100%;
-  background-color: rgba(255, 255, 255, 1);
 }
 
 .title-container {
-  padding-top: 10px;
-  padding-right: 40px;
+  top: 0px;
+  padding-right: 34px;
   display: flex;
   align-items: center;
+  z-index: 1;
 }
 
 .title-container img {
-  margin-top: 5px;
+  margin-top: 0px;
   margin-right: 5px;
   height: 35px;
   width: 35px;
@@ -50,25 +43,40 @@ body {
   font-size: 35px;
   color: black;
   text-align: center;
-  margin-top: 8px;
-  margin-bottom: 5px;
+  margin-bottom: 0px;
 }
 
-.nav-bar ul {
+.nav-bar {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  opacity: 0.8;
+  position: absolute;
+  top: 0px;
+  height: 100px;
+  width: 100%;
+  background-color: rgba(255, 255, 255, 1);
+}
+
+.tabs a:hover {
+  color: rgb(244, 156, 12);
+}
+
+.tabs {
+  padding-top: 65px;
+}
+
+.tabs ul {
   display: flex;
   list-style: none;
-  padding: 0px;
-  margin: 0px 0px 8px;
+  margin-bottom: 15px;
 }
 
-.nav-bar li {
-  margin: 0px 0px 15px;
-}
-
-.nav-bar li, .nav-bar a {
+.tabs li, .tabs a {
+  padding: 0px 25px;
   color: black;
   text-decoration: none;
-  padding: 0px 20px;
   font-size: 22px;
 }
 
@@ -129,16 +137,12 @@ hr {
   height: 30px;
 }
 
-.nav-bar a:hover {
-  color: rgb(244, 156, 12);
-}
-
 #about, #help, #privacy, #legal {
   cursor: pointer;
   text-decoration: none;
 }
 
-#aboutPage, #helpPage {
+#about-page, #help-page {
   position: fixed;
   bottom: -100%;
   left: 0px;
@@ -154,66 +158,72 @@ hr {
   overflow-y: auto;
 }
 
-.model-content h2 {
-  font-size: 18px;
+.page-content {
+  margin: 3% auto;
+  width: 80%;
+  height: 100%;
 }
 
-.model-content p {
-  font-size: 14px;
-}
-
-.model-content ul {
+#top-total {
   display: flex;
-  flex-direction: column;
-  list-style-type: square;
-  padding-bottom: 8px;
+  padding-bottom: 35px; 
+  justify-content: space-between;
+  align-items: center;
 }
 
-.model-content li {
-  margin: 0px;
-  padding: 0px;
-  color: white;
-  font-size: 14px;
+#top-text {
+  width: 70%;
+  flex: 1;
 }
 
-.model-content a {
-  padding: 0px;
-  color: var(--bs-link-color);
-  font-size: 14px;
+#top-total img {
+  height: 400px;
+  margin-left: 50px;
 }
 
 .modal {
   display: none;
   position: fixed;
   z-index: 1;
-  left: 0;
-  top: 0;
+  left: 0px;
+  top: 0px;
   width: 100%;
   height: 100%;
   overflow: auto;
-  background-color: rgb(0,0,0);
   background-color: rgba(0,0,0,0.4);
 }
 
 .modal-content {
   background-color: #fefefe;
-  margin: 15% auto;
+  margin: 3% auto;
   padding: 20px;
   border: 1px solid #888;
   width: 80%;
 }
 
-#closePriv, #closeLegal {
+#close-privacy, #close-legal {
   color: #aaa;
   text-align: right;
   font-size: 38px;
   font-weight: bold;
 }
 
-#closePriv:hover, #closePriv:focus, #closeLegal:hover, #closeLegal:focus {
+#close-privacy:hover, #close-privacy:focus, #close-legal:hover, #close-legal:focus {
   color: rgb(244, 156, 12);
   text-decoration: none;
   cursor: pointer;
+}
+
+#about-page h2 {
+  font-size: 28px;
+}
+
+#about-page h3 {
+  font-size: 24px;
+}
+
+#about-page p {
+  font-size: 18px;
 }
 
 .modal-content h2 {
@@ -221,6 +231,8 @@ hr {
 }
 
 .modal-content h3 {
+  margin-top: -5px;
+  margin-bottom: 5px;
   font-size: 20px;
 }
 
@@ -228,10 +240,101 @@ hr {
   font-size: 16px;
 }
 
-#contactForm {
+.modal-content a {
+  padding: 0px;
+  color: var(--bs-link-color);
+  font-size: 16px;
+}
+
+.modal-content ul {
+  display: flex;
+  flex-direction: column;
+  list-style-type: square;
+  padding-bottom: 8px;
+}
+
+.modal-content ul li p {
+  margin: 0px;
+}
+
+.list-container {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 60px;
+}
+
+.headings {
+  margin-right: 100px;
+  margin-bottom: 10px;
+  list-style: none;
+}
+
+.headings a {
+  color: white;
+  text-decoration: none;
+  font-size: 20px;
+}
+
+.headings::before {
+  content: '\2295';
+  margin-right: 3px;
+}
+
+.subheadings {
+  max-height: 0px;
+  max-width: 600px;
+  overflow: hidden;
+  transition: max-height 0.8s ease;
+}
+
+.subheadings.visible {
+  max-height: 200px;
+}
+
+.subheadings li p {
+  margin: 0px;
+  padding: 0px;
+  color: white;
+  font-size: 14px;
+}
+
+#contact-form {
   display: flex;
   margin: auto;
   margin-top: 0px;
+}
+
+fieldset {
+  border: 1px solid white;
+}
+
+legend {
+  float: none;
+  width: inherit;
+  color: white;
+  font-size: 100%;
+  padding: 0.2em 0.5em;
+  position: relative;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+legend::before {
+  position: absolute;
+  content: "";
+  height: 11px;
+  border-left: 1px solid white;
+  left: 0px;
+  top: 9px;
+}
+
+legend::after {
+  position: absolute;
+  content: "";
+  height: 11px;
+  border-right: 1px solid white;
+  right: 0px;
+  top: 9px;
 }
 
 .fields-row {
@@ -253,7 +356,11 @@ input[type=text], input[type=email] {
 }
 
 textarea {
+  width: calc(100% - 20px);
+  height: 200px;
   resize: none;
+  box-sizing: border-box;
+  vertical-align: middle;
 }
 
 .footer {
@@ -279,7 +386,7 @@ textarea {
 
 .word-links a {
   font-size: 18px;
-  margin: 5px 15px 2px;
+  padding: 5px 15px 2px;
   text-decoration: none;
 }
 
@@ -300,127 +407,164 @@ textarea {
   margin: 0px 20px 0px 0px;
 }
 
-@media screen and (max-width: 600px) {
-  #legalPage {
-    padding: 10px 10px 60px;
-  }
-}
 
-@media screen and (max-width: 600px) {
-  #legalPage h2 {
-    font-size: 14px;
-  }
-}
-
-@media screen and (max-width: 600px) {
-  #legalPage p, #legalPage ul {
-    font-size: 10px;
-  }
-}
-
+/* Responsive to mobile phone screens */
 @media screen and (max-width: 600px) {
   .background-container {
     bottom: -25px;
   }
-}
 
-@media screen and (max-width: 600px) {
-  .nav-bar {
-    height: 75px;
-  }
-}
-
-@media screen and (max-width: 600px) {
   .title-container {
-    padding-right: 26px;
+    padding-top: 0px;
+    padding-right: 34px;
   }
-}
 
-@media screen and (max-width: 600px) {
   .title-container img {
-    height: 21px;
-    width: 21px;
+    margin-top: -2px;
+    margin-right: 5px;
+    height: 18px;
+    width: 18px;
   }
-}
 
-@media screen and (max-width: 600px) {
   #pandosys {
-    font-size: 21px;
-    margin: 8px 8px 8px 0px;
+    font-size: 18px;
+    margin-top: 0px;
+    margin-bottom: 2px;
   }
-}
 
-@media screen and (max-width: 600px) {
-  .nav-bar ul {
-    margin: 0px 0px 0px;
-    padding: 0px 0px 0px;
+  .nav-bar {
+    height: 50px;
   }
-}
 
-@media screen and (max-width: 600px) {
-  .nav-bar li, .nav-bar a {
-    font-size: 14px;
+  .tabs {
+    padding-top: 25px;
+  }
+
+  .tabs ul {
+    margin-bottom: 0px;
+    padding: 0px;
+  }
+
+  .tabs li, .tabs a {
     padding: 6px 12px;
-    margin: 0px 0px 4px;
+    margin-bottom: 4px;
+    font-size: 12px;
   }
-}
 
-@media screen and (max-width: 600px) {
+  .dropdown .dropdown-menu {
+    min-width: 100%;
+  }
+
+  .dropdown-menu a {
+    font-size: 10px;
+    padding-top: 4px;
+    padding-bottom: 2px;
+  }
+
+  .dropdown-menu p {
+    font-size: 10px;
+    padding-bottom: 0px;
+    margin-bottom: -2px;
+  }
+
+  hr {
+    margin-top: -2px;
+    margin-bottom: 0px;
+  }
+
+  .separator {
+    border-left-width: 1px;
+  }
+
   .nav-bar span {
-    margin-top: 4px;
-    height: 25px;
-  }
-}
-
-@media screen and (max-width: 600px) {
-  .footer span {
-    margin-top: 3px;
+    margin-top: 7px;
     height: 20px;
   }
-}
 
-@media screen and (max-width: 600px) {
-  .footer {
-    height: 65px;
+  #about-page h2 {
+    font-size: 17px;
   }
-}
 
-@media screen and (max-width: 600px) {
-  #pandosysF {
-    display: none;
+  #about-page h3 {
+    font-size: 15px;
   }
-}
 
-@media screen and (max-width: 600px) {
-  #aboutPage, #helpPage {
-    height: calc(100% - 75px);
-  }
-}
-
-@media screen and (max-width: 600px) {
-  .word-links {
-    align-self: center;
-  }
-}
-
-@media screen and (max-width: 600px) {
-  .word-links a {
+  #about-page p {
     font-size: 11px;
   }
-}
 
-@media screen and (max-width: 600px) {
+  #top-total img {
+    display: none;
+  }
+
+  .headings a {
+    font-size: 12px;
+  }
+
+  .subheadings li p {
+    font-size: 9px;
+  }
+
+  .modal-content h2 {
+    font-size: 15px;
+  }
+
+  .modal-content h3 {
+    font-size: 12px;
+  }
+
+  .modal-content p {
+    font-size: 10px;
+  }
+
+  .modal-content a {
+    font-size: 8px;
+  }
+
+  .modal-content ul {
+    padding-left: 10px;
+    margin-bottom: 5px;
+  }
+
+  .modal-content li {
+    font-size: 10px;
+  }
+
+  .modal-content ul li p {
+    font-size: 9px;
+  }
+
+  .footer span {
+    margin-top: 7px;
+    height: 15px;
+  }
+
+  .footer {
+    height: 50px;
+  }
+
+  #about-page, #help-page {
+    height: calc(100% - 75px);
+  }
+
+  .word-links {
+    margin-top: -10px;
+    align-self: center;
+  }
+
+  .word-links a {
+    font-size: 10px;
+  }
+
   .logo-links {
     display: flex;
     align-self: center;
-    margin-top: 0px;
+    margin-top: -1px;
     margin-bottom: 1px;
   }
-}
 
-@media screen and (max-width: 600px) {
   .logo-links img {
-    width: 15px;
-    height: 15px;
+    width: 14px;
+    height: 14px;
   }
 }

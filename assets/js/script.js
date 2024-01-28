@@ -24,26 +24,26 @@ function toggleWall(tabId, wallId) {
 //About Us
 document.getElementById('about').addEventListener('click', function(e) {
     e.preventDefault();
-    toggleWall('about', 'aboutPage');
+    toggleWall('about', 'about-page');
 });
 
 //Help Center
 document.getElementById('help').addEventListener('click', function(e) {
     e.preventDefault();
-    toggleWall('help', 'helpPage');
+    toggleWall('help', 'help-page');
 });
 
 
 
 //Pop-up boxes for footer bar links
-var privModal = document.getElementById("privModal");
-var legalModal = document.getElementById("legalModal");
+var privModal = document.getElementById("privacy-modal");
+var legalModal = document.getElementById("legal-modal");
 
 var privLnk = document.getElementById("privacy");
 var legalLnk = document.getElementById("legal");
 
-var spanPriv = document.getElementById("closePriv");
-var spanLegal = document.getElementById("closeLegal");
+var spanPriv = document.getElementById("close-privacy");
+var spanLegal = document.getElementById("close-legal");
 
 privLnk.onclick = function() {
   privModal.style.display = "block";
@@ -67,4 +67,32 @@ window.onclick = function(event) {
   } else if (event.target == legalModal) {
     legalModal.style.display = "none";
   }
+}
+
+
+// Toggle view status of the list in the About Us page
+function toggleText(elementId) {
+    var textElement = document.getElementById(elementId);
+    textElement.classList.toggle('visible');
+}
+
+
+function displayInfo() {
+  var firstName = document.getElementById('firstname').value;
+  var lastName = document.getElementById('lastname').value;
+  var emailAddress = document.getElementById('emailaddress').value;
+  var username = document.getElementById('username').value;
+  var reason = document.getElementById('reason').value;
+  var message = document.getElementById('message').value;
+  var uploadFile = document.getElementById('uploadfile').value;
+
+  var outputWindow =  "First name: " + firstName + "\n" +
+                      "Last name: " + lastName + "\n" +
+                      "Email address: " + emailAddress + "\n" +
+                      "Username: " + username + "\n" +
+                      "Reason for contact: " + reason + "\n" +
+                      "Message: " + message + "\n" +
+                      "File uploaded: " + uploadFile;
+
+  alert(outputWindow);
 }
