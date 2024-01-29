@@ -11,7 +11,7 @@ function toggleWall(tabId, wallId) {
     else {
         //if another tab is already open, close it
         if (openTab !== null) {
-            const raisedWall = document.getElementById(`${openTab}Page`);
+            const raisedWall = document.getElementById(`${openTab}-page`);
             raisedWall.style.bottom = '-100%';
         }
         //open the desired tab
@@ -20,12 +20,28 @@ function toggleWall(tabId, wallId) {
     }
 }
 
-
 //About Us
 document.getElementById('about').addEventListener('click', function(e) {
     e.preventDefault();
     toggleWall('about', 'about-page');
 });
+
+//Products
+function toggleDropdown() {
+  var dropdownMenu = document.querySelector('.dropdown-menu');
+  var dropbtn = document.getElementById('dropbtn');
+  
+  if (innerWidth <= 600) {
+    if (dropdownMenu.style.display === 'none' || dropdownMenu.style.display === '') {
+      dropdownMenu.style.display = 'block';
+      dropbtn.style.color = 'rgb(244, 156, 12)';
+    } 
+    else {
+      dropdownMenu.style.display = 'none';
+      dropbtn.style.color = '';
+    }
+  } 
+}
 
 //Help Center
 document.getElementById('help').addEventListener('click', function(e) {
@@ -35,7 +51,7 @@ document.getElementById('help').addEventListener('click', function(e) {
 
 
 
-//Pop-up boxes for footer bar links
+//Modal transitions for footer bar links
 var privModal = document.getElementById("privacy-modal");
 var legalModal = document.getElementById("legal-modal");
 

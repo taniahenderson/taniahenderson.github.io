@@ -4,7 +4,9 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+
     <title>Pando Systems</title>
+
     <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" href="assets/css/style.css">
     <link rel="stylesheet" href="assets/css/Arial.css">
@@ -16,41 +18,38 @@
     <link rel="stylesheet" href="assets/css/Helvetica.css">
     <link rel="stylesheet" href="assets/css/Navbar-Centered-Brand-Dark-icons.css">
     <link rel="stylesheet" href="assets/css/style.css">
-    <script src="assets/jq/jquery-3.7.1.min.js"></script>
 </head>
 
 <body>
 <!-- Background image of the Pando trees system -->
 <div class="background-container"></div>
-    <header class="header">
-        <div class="title-container">
-            <!-- Novais, R. (2022) Aspen grove, Pando tree, fall season. stock photo, iStock. Fishlake National Forest. Available at: https://www.istockphoto.com/photo/aspen-grove-pando-tree-fall-season-gm1442566346-481864211 (Accessed: January 2024). -->
-            <img src="assets/img/pando_systems_logo.png" alt="Pando Systems"/>
-            <h1 id="pandosys">Pando Systems</h1>
+<header class="header">
+    <div class="title-container">
+        <!-- Novais, R. (2022) Aspen grove, Pando tree, fall season. stock photo, iStock. Fishlake National Forest. Available at: https://www.istockphoto.com/photo/aspen-grove-pando-tree-fall-season-gm1442566346-481864211 (Accessed: January 2024). -->
+        <img src="assets/img/pando_systems_logo.png" alt="Pando Systems"/>
+        <h1 id="pandosys">Pando Systems</h1>
+    </div>
+    <div class="nav-bar">
+        <!-- Tabs -->
+        <div class="tabs">
+            <ul>
+                <li><a href="#" id="about">About Us</a></li>
+                <span class="separator"></span>
+                <li class="dropdown">
+                    <button id="dropbtn" onClick="toggleDropdown()"><a href="#">Products</a> &#11167;</button>
+                    <div class="dropdown-menu">
+                        <hr class="hr">
+                        <a class="dropdown-item" href="https://sketch.pandosystems.uk/" target="_blank">Pando Sketch</a>
+                        <hr class="hr">
+                        <p class="dropdown-item" href="#">Coming soon!</p>
+                    </div>
+                </li>
+                <span class="separator"></span>
+                <li><a href="#" id="help">Help Center</a></li>
+            </ul>
         </div>
-        <div class="nav-bar">
-            <!-- Tabs -->
-            <div class="tabs">
-                <ul>
-                    <li><a href="#" id="about">About Us</a></li>
-                    <span class="separator"></span>
-                    <li class="dropdown">
-                        <a href="#" data-toggle="dropdown">Products</a>
-                        <div class="dropdown-menu">
-                            <hr class="hr">
-                            <a class="dropdown-item" href="https://sketch.pandosystems.uk/" target="_blank">Pando Sketch</a>
-                            <hr class="hr">
-                            <p class="dropdown-item" href="#">Coming soon!</p>
-                        </div>
-                    </li>
-                    <span class="separator"></span>
-                    <li><a href="#" id="help">Help Center</a></li>
-                </ul>
-            </div>
-        </div>
-    </header>
-</div>
-
+    </div>
+</header>
 <!-- Pop-ups -->
 <div id="about-page">
     <div class="page-content">
@@ -116,43 +115,48 @@
         </div>
     </div>
 </div>
-
 <div id="help-page">
     <form id="contact-form">
         <fieldset>
-        <legend>Contact Form</legend>
-            <div class="fields-row">
-                <div class="fields-pair">
-                    <label for="first-name">First name:</label>
-                    <input type="text" id="first-name" name="first-name" placeholder="Required" required>
+            <legend>Contact Form</legend>
+                <div class="form-content" style="padding: 0px 16px;">
+                    <div class="fields-row">
+                        <div class="fields-pair" style="margin-right: 20px;">
+                            <label for="first-name">First name:</label>
+                            <input type="text" id="first-name" name="first-name" placeholder="Required" required>
+                        </div>
+                        <div class="fields-pair">
+                            <label for="last-name">Last name:</label>
+                            <input type="text" id="last-name" name="last-name" placeholder="Required" required>
+                        </div>
+                    </div>
+                    <div class="fields-row">
+                        <div class="fields-pair" style="margin-right: 20px;">
+                            <label for="email-address">Email address:</label>
+                            <input type="email" id="email-address" name="email-address" placeholder="Required" required>
+                        </div>
+                        <div class="fields-pair" style="margin-right: 0px;">
+                            <label for="username">Username:</label>
+                            <input type="text" id="username" name="username" placeholder="Optional">
+                        </div>
+                    </div><br>
+                    <div id="reasons-message">
+                        <label for="reason">Reason for contact:</label><br>
+                        <select id="reason" name="reason" style="width: 50%">
+                            <option value="feedback-app">Feedback (App)</option>
+                            <option value="feedback-web">Feedback (Website)</option>
+                            <option value="bug-report">Bug report</option>
+                            <option value="user-report">Inappropriate user behaviour</option>
+                            <option value="gen-enquiry">General enquiry</option>
+                        </select><br>
+                        <textarea id="message" name="message" placeholder="Your message here..." required></textarea><br>
+                    </div>
+                    <label for="upload-file">Select a file:</label>
+                    <input type="file" id="upload-file" name="upload-file"><br><br>
+                    <div id="file-button">
+                        <input type="button" id="submitbtn" value="Submit" onClick="displayInfo()">
+                    </div>
                 </div>
-                <div class="fields-pair">
-                    <label for="last-name">Last name:</label>
-                    <input type="text" id="last-name" name="last-name" placeholder="Required" required>
-                </div>
-            </div>
-            <div class="fields-row">
-                <div class="fields-pair">
-                    <label for="email-address">Email address:</label>
-                    <input type="email" id="email-address" name="email-address" placeholder="Required" required>
-                </div>
-                <div class="fields-pair">
-                    <label for="username">Username:</label>
-                    <input type="text" id="username" name="username" placeholder="Optional">
-                </div>
-            </div><br>
-            <label for="reason">Reason for contact:</label><br>
-            <select id="reason" name="reason">
-                <option value="feedback-app">Feedback (App)</option>
-                <option value="feedback-web">Feedback (Website)</option>
-                <option value="bug-report">Bug report</option>
-                <option value="user-report">Inappropriate user behaviour</option>
-                <option value="gen-enquiry">General enquiry</option>
-            </select><br>
-            <textarea id="message" name="message" placeholder="Your message here..." required></textarea><br>
-            <label for="upload-file">Select a file (optional):</label>
-            <input type="file" id="upload-file" name="upload-file"><br><br>
-            <input type="button" value="Submit" onClick="displayInfo()">
         </fieldset>
     </form>
 </div>
