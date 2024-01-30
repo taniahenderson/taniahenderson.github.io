@@ -26,7 +26,7 @@ body {
 
 .title-container {
   top: 0px;
-  padding-right: 34px;
+  padding-right: 65px;
   display: flex;
   align-items: center;
   z-index: 1;
@@ -183,7 +183,7 @@ hr {
 
 .page-content {
   margin: 3% auto;
-  width: 80%;
+  width: 95%;
   height: 100%;
 }
 
@@ -298,11 +298,6 @@ hr {
   font-size: 20px;
 }
 
-.headings::before {
-  content: '\2295';
-  margin-right: 3px;
-}
-
 .subheadings {
   max-height: 0px;
   max-width: 600px;
@@ -404,7 +399,7 @@ input[type=button] {
   color: #fff;
   text-decoration: none;
   cursor: pointer;
-  margin: 5px auto 30px;;
+  margin: 5px auto 30px;
   display: block;
   font-size: 18px;
   padding: 8px 12px;
@@ -459,7 +454,7 @@ input[type=button] {
 .logo-links img {
   width: 25px;
   height: 25px;
-  margin: 0px 20px 0px 0px;
+  margin-right: 20px;
 }
 
 
@@ -473,7 +468,7 @@ input[type=button] {
 
   .title-container {
     padding-top: 5px;
-    padding-right: 34px;
+    padding-right: 40px;
   }
 
   .title-container img {
@@ -550,21 +545,24 @@ input[type=button] {
 
   #about-page h2 {
     font-size: 17px;
+    text-align: center;
   }
 
   #about-page h3 {
     font-size: 15px;
+    text-align: center;
   }
 
   #about-page p {
     font-size: 11px;
   }
 
-  #top-total img {
+  #login-img {
     display: none;
   }
 
   .list-container {
+    margin-top: -30px;
     flex-direction: column;
     align-items: center;
     justify-content: space-evenly;
@@ -585,32 +583,29 @@ input[type=button] {
   }
 
   .subheadings {
-    max-width: 100px;
+    max-width: 250px;
   }
 
   .subheadings li p {
-    font-size: 9px;
+    font-size: 6px;
+    margin-bottom: 10px;
   }
 
   .fields-pair {
     width: 100%;
-    box-sizing: border-box; /* Ensures padding and border are included in width */
+    box-sizing: border-box;
   }
 
-  input[type="text"],
-  input[type="email"],
-  select,
-  textarea {
-      width: 100%; /* Makes these elements full width */
+  input[type="text"], input[type="email"], select, textarea {
+      width: 100%;
   }
 
   .fields-row {
       flex-direction: column;
   }
 
-  input[type="file"],
-  input[type="button"] {
-      width: 100%; /* Full width for file input and button */
+  input[type="file"], input[type="button"] {
+      width: 100%;
   }
 
   .modal-content h2 {
@@ -653,6 +648,10 @@ input[type=button] {
 
   #about-page, #help-page {
     height: calc(100% - 55px);
+  }
+
+  .page-content {
+    height: 130%;
   }
 
   .word-links {
