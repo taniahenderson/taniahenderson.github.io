@@ -401,6 +401,7 @@ textarea {
   text-align: center;
 }
 
+/* https://www.w3docs.com/snippets/css/how-to-style-input-and-submit-buttons.html */
 input[type=button] {
   background-color: rgb(244, 156, 12);
   border: none;
@@ -465,7 +466,6 @@ input[type=button] {
   height: 25px;
   margin-right: 20px;
 }
-
 
 
 
@@ -644,6 +644,7 @@ input[type=button] {
     width: 100%;
   }
 
+  /* https://stackoverflow.com/questions/20656114/how-to-increase-height-of-a-select */
   select {
     -webkit-appearance: menulist-button;
     height: 30px;
