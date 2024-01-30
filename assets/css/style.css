@@ -575,6 +575,10 @@ input[type=button] {
     display: none;
   }
 
+  #login-img2 {
+    display: flex;
+  }
+
   .list-container {
     margin-top: 20px;
     flex-direction: column;
