@@ -91,24 +91,3 @@ function toggleText(elementId) {
     var textElement = document.getElementById(elementId);
     textElement.classList.toggle('visible');
 }
-
-
-function displayInfo() {
-  var firstName = document.getElementById('firstname').value;
-  var lastName = document.getElementById('lastname').value;
-  var emailAddress = document.getElementById('emailaddress').value;
-  var username = document.getElementById('username').value;
-  var reason = document.getElementById('reason').value;
-  var message = document.getElementById('message').value;
-  var uploadFile = document.getElementById('uploadfile').value;
-
-  var outputWindow =  "First name: " + firstName + "\n" +
-                      "Last name: " + lastName + "\n" +
-                      "Email address: " + emailAddress + "\n" +
-                      "Username: " + username + "\n" +
-                      "Reason for contact: " + reason + "\n" +
-                      "Message: " + message + "\n" +
-                      "File uploaded: " + uploadFile;
-
-  alert(outputWindow);
-}

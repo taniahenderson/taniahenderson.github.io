@@ -204,6 +204,10 @@ hr {
   margin-left: 50px;
 }
 
+#login-img2 {
+  display: none;
+}
+
 .modal {
   display: none;
   position: fixed;
@@ -307,6 +311,7 @@ hr {
 
 .subheadings.visible {
   max-height: 200px;
+  overflow: visible;
 }
 
 .subheadings li p {
@@ -326,6 +331,9 @@ fieldset {
   border: 1px solid white;
 }
 
+/* Code for legend obtained from:
+ https://stackoverflow.com/questions/46229876/custom-border-for-a-fieldset-and-legend 
+ */
 legend {
   float: none;
   width: inherit;
@@ -405,6 +413,7 @@ input[type=button] {
   padding: 8px 12px;
   -webkit-border-radius: 5px;
   border-radius: 5px;
+  width: 100%;
 }
 
 .container {
@@ -546,6 +555,7 @@ input[type=button] {
   #about-page h2 {
     font-size: 17px;
     text-align: center;
+    margin-bottom: 2px;
   }
 
   #about-page h3 {
@@ -557,12 +567,16 @@ input[type=button] {
     font-size: 11px;
   }
 
-  #login-img {
+  #top-text > p:nth-child(3) {
+    margin-bottom: 0px;
+  }  
+
+  #login-img1 {
     display: none;
   }
 
   .list-container {
-    margin-top: -30px;
+    margin-top: 20px;
     flex-direction: column;
     align-items: center;
     justify-content: space-evenly;
@@ -576,6 +590,8 @@ input[type=button] {
 
   .headings {
     margin: 0px;
+    margin-right: 15px;
+    text-align: center;
   }
 
   .headings a {
@@ -583,12 +599,40 @@ input[type=button] {
   }
 
   .subheadings {
-    max-width: 250px;
+    max-width: 300px;
+  }
+
+  .subheadings li {
+    list-style: none;
   }
 
   .subheadings li p {
     font-size: 6px;
     margin-bottom: 10px;
+    padding-left: 7px;
+    margin-right: -7px;
+  }
+
+  #top-total {
+    padding-bottom: 5px;
+  }
+
+  #top-total2 {
+    display: flex;
+    flex-direction: column;
+  }
+
+  #top-total2 img {
+    height: 200px;
+    margin: 0px auto;
+  }
+
+  legend {
+    font-size: 18px;
+  }
+
+  legend::before, legend::after {
+    top: 12px;
   }
 
   .fields-pair {
@@ -597,15 +641,24 @@ input[type=button] {
   }
 
   input[type="text"], input[type="email"], select, textarea {
-      width: 100%;
+    width: 100%;
+  }
+
+  select {
+    -webkit-appearance: menulist-button;
+    height: 30px;
   }
 
   .fields-row {
-      flex-direction: column;
+    flex-direction: column;
   }
 
   input[type="file"], input[type="button"] {
-      width: 100%;
+    width: 100%;
+  }
+
+  fieldset {
+    margin-bottom: 45px;
   }
 
   .modal-content h2 {
@@ -640,10 +693,11 @@ input[type=button] {
   .footer span {
     margin-top: 7px;
     height: 15px;
+    bottom: 1px;
   }
 
   .footer {
-    height: 50px;
+    position: block;
   }
 
   #about-page, #help-page {
@@ -651,7 +705,7 @@ input[type=button] {
   }
 
   .page-content {
-    height: 130%;
+    height: 160%;
   }
 
   .word-links {
