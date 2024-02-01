@@ -43,7 +43,7 @@ function toggleDropdown() {
   } 
 }
 
-//Help Center
+//Help Centre
 document.getElementById('help').addEventListener('click', function(e) {
     e.preventDefault();
     toggleWall('help', 'help-page');
