@@ -50,6 +50,24 @@ document.getElementById('help').addEventListener('click', function(e) {
 });
 
 
+//Link to open Help Centre
+function helpURL() {
+  //https://www.sitepoint.com/get-url-parameters-with-javascript/
+  const queryString = window.location.search;
+  const urlParams = new URLSearchParams(queryString);
+  const open = urlParams.get('open');
+
+  if (open) {
+      const wallId = `${open}-page`;
+      if (document.getElementById(wallId)) {
+          toggleWall(open, wallId);
+      }
+  }
+}
+
+document.addEventListener('DOMContentLoaded', helpURL);
+//https://pandosystems.uk/?open=help
+
 
 //Modal transitions for footer bar links
 var privModal = document.getElementById("privacy-modal");
