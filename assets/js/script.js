@@ -58,7 +58,7 @@ function helpURL() {
   const urlParams = new URLSearchParams(queryString);
   const open = urlParams.get('open');
   const dropdownList = document.getElementById('reason');
-  const forgotPass = urlParams.get('forgot-password');
+  const item = urlParams.get('item');
 
   if (open) {
       const wallId = `${open}-page`;
@@ -69,15 +69,15 @@ function helpURL() {
 
   for (let option of dropdownList.options) {
     let chosen = option.value;
-    if (chosen === forgotPass) {
-      dropdownList.value = forgotPass;
+    if (chosen === item) {
+      dropdownList.value = item;
     }
   }
 }
 
 document.addEventListener('DOMContentLoaded', helpURL);
 //https://pandosystems.uk/?open=help
-//https://pandosystems.uk/?open=help&forgotPass=forgot-password
+//https://pandosystems.uk/?open=help&item=forgot-password
 
 
 //Modal transitions for footer bar links
