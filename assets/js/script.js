@@ -50,8 +50,8 @@ document.getElementById('help').addEventListener('click', function(e) {
 });
 
 
-//Link to open Help Centre
-function helpURL() {
+//Link to open URLs to specific website functions
+function specificURL() {
   //https://www.sitepoint.com/get-url-parameters-with-javascript/
   //https://stackoverflow.com/questions/70267613/pre-select-a-dropdown-in-a-form-from-an-external-url-link
   const queryString = window.location.search;
@@ -60,6 +60,8 @@ function helpURL() {
   
   const dropdownList = document.getElementById('reason');
   const item = urlParams.get('item');
+
+  const modal = urlParams.get('modal');
 
   if (open) {
       const wallId = `${open}-page`;
@@ -74,11 +76,16 @@ function helpURL() {
       dropdownList.value = item;
     }
   }
+
+  if (modal) {
+    legalModal.style.display = "block";
+  }
 }
 
-document.addEventListener('DOMContentLoaded', helpURL);
+document.addEventListener('DOMContentLoaded', specificURL);
 //https://pandosystems.uk/?open=help
 //https://pandosystems.uk/?open=help&item=forgot-password
+//https://pandosystems.uk/?modal=legal
 
 
 //Modal transitions for footer bar links
@@ -115,11 +122,6 @@ window.onclick = function(event) {
   }
 }
 
-//https://stackoverflow.com/questions/28079380/show-bootstrap-modal-only-if-url-has-certain-parameters
-var url = window.location.href;
-if(url.indexOf('?modal=legal') != -1) {
-    $('#legal-modal').modal('show');
-}
 //https://pandosystems.uk/?modal=legal
 
 // Toggle view status of the list in the About Us page
