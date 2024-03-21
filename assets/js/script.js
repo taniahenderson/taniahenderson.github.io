@@ -57,6 +57,7 @@ function helpURL() {
   const queryString = window.location.search;
   const urlParams = new URLSearchParams(queryString);
   const open = urlParams.get('open');
+  
   const dropdownList = document.getElementById('reason');
   const item = urlParams.get('item');
 
@@ -114,6 +115,12 @@ window.onclick = function(event) {
   }
 }
 
+//https://stackoverflow.com/questions/28079380/show-bootstrap-modal-only-if-url-has-certain-parameters
+var url = window.location.href;
+if(url.indexOf('?modal=legal') != -1) {
+    $('#legal-modal').modal('show');
+}
+//https://pandosystems.uk/?modal=legal
 
 // Toggle view status of the list in the About Us page
 function toggleText(elementId) {
