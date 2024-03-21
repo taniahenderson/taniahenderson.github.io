@@ -53,9 +53,12 @@ document.getElementById('help').addEventListener('click', function(e) {
 //Link to open Help Centre
 function helpURL() {
   //https://www.sitepoint.com/get-url-parameters-with-javascript/
+  //https://stackoverflow.com/questions/70267613/pre-select-a-dropdown-in-a-form-from-an-external-url-link
   const queryString = window.location.search;
   const urlParams = new URLSearchParams(queryString);
   const open = urlParams.get('open');
+  const dropdownList = document.getElementById('reason');
+  const forgotPass = urlParams.get('forgot-password');
 
   if (open) {
       const wallId = `${open}-page`;
@@ -63,10 +66,18 @@ function helpURL() {
           toggleWall(open, wallId);
       }
   }
+
+  for (let option of dropdownList.options) {
+    let chosen = option.value;
+    if (chosen === forgotPass) {
+      dropdownList.value = forgotPass;
+    }
+  }
 }
 
 document.addEventListener('DOMContentLoaded', helpURL);
 //https://pandosystems.uk/?open=help
+//https://pandosystems.uk/?open=help&forgotPass=forgot-password
 
 
 //Modal transitions for footer bar links
