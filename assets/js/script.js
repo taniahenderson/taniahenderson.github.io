@@ -131,3 +131,29 @@ function toggleText(elementId) {
     var textElement = document.getElementById(elementId);
     textElement.classList.toggle('visible');
 }
+
+
+document.addEventListener('DOMContentLoaded', (event) => {
+  document.getElementById('contact-form').addEventListener('submit', function(e) {
+      e.preventDefault();
+
+      const formData = new FormData(this);
+
+      fetch(this.action, {
+          method: 'POST',
+          body: formData,
+      })
+      .then(response => {
+          if (response.ok) {
+              return response.json();
+          }
+          throw new Error('Network response was not ok.');
+      })
+      .then(data => {
+          console.log(data);
+      })
+      .catch(error => {
+          console.error('There has been a problem with your fetch operation:', error);
+      });
+  });
+});
