@@ -135,6 +135,7 @@ function toggleText(elementId) {
 
 document.addEventListener('DOMContentLoaded', (event) => {
   document.getElementById('contact-form').addEventListener('submit', function(e) {
+    console.log('Form submit event triggered');
       e.preventDefault();
 
       const formData = new FormData(this);
