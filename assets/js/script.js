@@ -85,6 +85,7 @@ function specificURL() {
 document.addEventListener('DOMContentLoaded', specificURL);
 //https://pandosystems.uk/?open=help
 //https://pandosystems.uk/?open=help&item=forgot-password
+//https://pandosystems.uk/?open=help&item=data-request
 //https://pandosystems.uk/?open=help&item=data-edit
 //https://pandosystems.uk/?open=help&item=data-delete
 //https://pandosystems.uk/?modal=legal
