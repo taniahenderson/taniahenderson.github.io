@@ -402,7 +402,7 @@ textarea {
 }
 
 /* https://www.w3docs.com/snippets/css/how-to-style-input-and-submit-buttons.html */
-input[type=button] {
+input[type=submit] {
   background-color: rgb(244, 156, 12);
   border: none;
   color: #fff;
