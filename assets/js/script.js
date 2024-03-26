@@ -125,7 +125,6 @@ window.onclick = function(event) {
   }
 }
 
-//https://pandosystems.uk/?modal=legal
 
 // Toggle view status of the list in the About Us page
 function toggleText(elementId) {
