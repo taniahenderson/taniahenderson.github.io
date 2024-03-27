@@ -329,6 +329,13 @@ hr {
   height: calc(100vh - 180px);
 }
 
+.divider-ver2 {
+  margin-top: 0px;
+  border-right: 3px solid white;
+  border-radius: 5px;
+  height: calc(100vh - 180px);
+}
+
 
 #help-page {
   justify-content: space-between;
@@ -442,7 +449,7 @@ input[type=submit] {
   width: 30%;
   height: 93%;
   border-left: 5px solid white;
-  border-right: 5px solid white;
+  border-right: 2px solid white;
   padding-left: 50px;
   padding-right: 50px;
   display: flex;
