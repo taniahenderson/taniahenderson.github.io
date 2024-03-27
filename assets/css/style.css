@@ -321,8 +321,20 @@ hr {
   font-size: 14px;
 }
 
+
+.divider-ver {
+  margin-top: 0px;
+  border-left: 5px solid white;
+  border-radius: 5px;
+  height: calc(100vh - 180px);
+}
+
+
+#help-page {
+  justify-content: space-between;
+}
+
 #contact-form {
-  display: flex;
   margin: auto;
   margin-top: 0px;
 }
@@ -416,6 +428,62 @@ input[type=submit] {
   border-radius: 5px;
   width: 100%;
 }
+
+#form-div {
+  width: 30%;
+}
+
+#faqs {
+  width: 68%;
+  display: flex;
+}
+
+#panel {
+  width: 30%;
+  height: 93%;
+  border-left: 5px solid white;
+  border-right: 5px solid white;
+  padding-left: 50px;
+  padding-right: 50px;
+  display: flex;
+  flex-direction: column;
+}
+
+#panel h2 {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#shown-answer {
+  width: 70%;
+  height: 93%;
+  padding-left: 50px;
+  padding-right: 50px;
+}
+
+.question-link {
+  color: white;
+  text-decoration: none;
+  margin: auto;
+}
+
+.answer {
+  display: none;
+}
+
+.answer a {
+  color: lightblue;
+}
+
+.visible {
+  display: block;
+}
+
+hr.dashed {
+  border-top: 5px solid white;
+  border-radius: 5px;
+}
+
 
 .container {
   border-radius: 5px;
@@ -665,6 +733,16 @@ input[type=submit] {
   fieldset {
     margin-bottom: 45px;
   }
+
+  #form-div {
+    width: 100%;
+  }
+  
+  #faqs {
+    display: none;
+  }
+
+
 
   .modal-content h2 {
     font-size: 15px;

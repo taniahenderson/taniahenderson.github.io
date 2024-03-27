@@ -120,53 +120,164 @@
     </div>
 </div>
 <div id="help-page">
-    <form action="https://backend.pandosystems.uk/submit-form" method="post" id="contact-form">
-        <fieldset>
-            <legend>Contact Form</legend>
-                <div class="form-content" style="padding: 0px 16px;">
-                    <div class="fields-row">
-                        <div class="fields-pair" style="margin-right: 20px;">
-                            <label for="first-name">First name:</label>
-                            <input type="text" id="first-name" name="first-name" placeholder="Required" required>
+
+    <div id="form-div">
+        <form action="https://backend.pandosystems.uk/submit-form" method="post" id="contact-form">
+            <fieldset>
+                <legend>Contact Form</legend>
+                    <div class="form-content" style="padding: 0px 16px;">
+                        <div class="fields-row">
+                            <div class="fields-pair" style="margin-right: 20px;">
+                                <label for="first-name">First name:</label>
+                                <input type="text" id="first-name" name="first-name" placeholder="Required" required>
+                            </div>
+                            <div class="fields-pair">
+                                <label for="last-name">Last name:</label>
+                                <input type="text" id="last-name" name="last-name" placeholder="Required" required>
+                            </div>
                         </div>
-                        <div class="fields-pair">
-                            <label for="last-name">Last name:</label>
-                            <input type="text" id="last-name" name="last-name" placeholder="Required" required>
+                        <div class="fields-row">
+                            <div class="fields-pair" style="margin-right: 20px;">
+                                <label for="email-address">Email address:</label>
+                                <input type="email" id="email-address" name="email-address" placeholder="Required" required>
+                            </div>
+                            <div class="fields-pair" style="margin-right: 0px;">
+                                <label for="username">Username:</label>
+                                <input type="text" id="username" name="username" placeholder="Optional">
+                            </div>
+                        </div><br>
+                        <div id="reasons-message">
+                            <label for="reason">Reason for contact:</label><br>
+                            <select id="reason" name="reason" style="width: 50%">
+                                <option value="feedback-app">Feedback (App)</option>
+                                <option value="feedback-web">Feedback (Website)</option>
+                                <option value="bug-report">Bug report</option>
+                                <option value="user-report">Inappropriate user behaviour</option>
+                                <option value="gen-enquiry">General enquiry</option>
+                                <option value="data-request">Request my data</option>
+                                <option value="data-edit">Edit my data</option>
+                                <option value="data-delete">Delete my data</option>
+                                <option value="forgot-password">Reset my password</option>
+                            </select><br>
+                            <textarea id="message" name="message" placeholder="Your message here..." required></textarea><br>
+                        </div>
+                        <label for="upload-file">Select a file:</label>
+                        <input type="file" id="upload-file" name="upload-file"><br><br>
+                        <div id="file-button">
+                            <input type="submit" id="submitbtn" value="Submit">
                         </div>
                     </div>
-                    <div class="fields-row">
-                        <div class="fields-pair" style="margin-right: 20px;">
-                            <label for="email-address">Email address:</label>
-                            <input type="email" id="email-address" name="email-address" placeholder="Required" required>
-                        </div>
-                        <div class="fields-pair" style="margin-right: 0px;">
-                            <label for="username">Username:</label>
-                            <input type="text" id="username" name="username" placeholder="Optional">
-                        </div>
-                    </div><br>
-                    <div id="reasons-message">
-                        <label for="reason">Reason for contact:</label><br>
-                        <select id="reason" name="reason" style="width: 50%">
-                            <option value="feedback-app">Feedback (App)</option>
-                            <option value="feedback-web">Feedback (Website)</option>
-                            <option value="bug-report">Bug report</option>
-                            <option value="user-report">Inappropriate user behaviour</option>
-                            <option value="gen-enquiry">General enquiry</option>
-                            <option value="data-request">Request my data</option>
-                            <option value="data-edit">Edit my data</option>
-                            <option value="data-delete">Delete my data</option>
-                            <option value="forgot-password">Reset my password</option>
-                        </select><br>
-                        <textarea id="message" name="message" placeholder="Your message here..." required></textarea><br>
-                    </div>
-                    <label for="upload-file">Select a file:</label>
-                    <input type="file" id="upload-file" name="upload-file"><br><br>
-                    <div id="file-button">
-                        <input type="submit" id="submitbtn" value="Submit">
-                    </div>
-                </div>
-        </fieldset>
-    </form>
+            </fieldset>
+        </form>
+    </div>
+
+    <div id="faqs">
+        <div id="panel">
+            <h2>FAQ</h2>
+            <a href="#" onclick="showAnswer(1)" class="question-link">How to create / login to an account</a>
+            <hr class="dashed">
+            <a href="#" onclick="showAnswer(2)" class="question-link">How to create / join / invite to a project</a>
+            <hr class="dashed">
+            <a href="#" onclick="showAnswer(3)" class="question-link">How to leave / delete a project</a>
+            <hr class="dashed">
+            <a href="#" onclick="showAnswer(4)" class="question-link">Changing your avatar and pronouns</a>
+            <hr class="dashed">
+            <a href="#" onclick="showAnswer(5)" class="question-link">Visibility options and Roles</a>
+            <hr class="dashed">
+            <a href="#" onclick="showAnswer(6)" class="question-link">Managing your data</a>
+        </div>
+        <div id="shown-answer">
+            <div class="answer" id="answer1"> 
+                <p><strong>CREATE</strong></p>
+                <ol>
+                    <li>Go to <a href="https://sketch.pandosystems.uk/" target="_blank">Pando Sketch</a> and click <em>Sign up here</em></li>
+                    <li>Enter your details</li>
+                    <li>Click <em>Sign Up</em></li>
+                </ol>
+                <p><strong>LOGIN</strong></p>
+                <ol>
+                    <li>Go to <a href="https://sketch.pandosystems.uk/" target="_blank">Pando Sketch</a> and enter your details</li>
+                    <li>Click <em>Login</em></li>
+                </ol>
+                <p>Having trouble? Forgot your login details? Use our contact form to get in touch and someone from our team will help you out!</p>
+            </div>
+            <div class="answer" id="answer2">
+                <p><strong>CREATE</strong></p>
+                <ol>
+                    <li>From your Dashboard, click <em>Create</em></li>
+                    <li>Enter the title of the new project and some tags</li>
+                    <li>Select a visibility level</li>
+                    <li>Click <em>Create Project</em></li>
+                </ol>
+                <p><strong>JOIN</strong></p>
+                <ol>
+                    <li>From your Dashboard, click <em>Join</em></li>
+                    <li>Enter the Access Key (hint: ask the project owner to give it to you!)</li>
+                    <li>Click <em>Join</em></li>
+                </ol>
+                <p><strong>INVITE</strong></p>
+                <ol>
+                    <li>From inside the project, navigate to the project settings (hint: click the project title!)</li>
+                    <li>Scroll down until you can see the Access Key</li>
+                    <li>Copy it to your clipboard and send it to the user that wants to join you</li>
+                    <li>Have fun collaborating on the Pando Sketch project!</li>
+                </ol>
+            </div>
+            <div class="answer" id="answer3">
+                <p><strong>LEAVE</strong></p>
+                <ol>
+                    <li>From inside the project, navigate to the project settings (hint: click the project title!)</li>
+                    <li>Scroll down until you can see the <em>Leave</em> button</li>
+                    <li>Click <em>Leave</em> and confirm your decision</li>
+                </ol>
+                <p><strong>DELETE</strong></p>
+                <ol>
+                    <li>From the project settings, scroll down until you can see the <em>Delete</em> button</li>
+                    <li>Click <em>Delete</em> and confirm your decision</li>
+                </ol>
+            </div>
+            <div class="answer" id="answer4">
+                <p><strong>AVATAR</strong></p>
+                <ol>
+                    <li>From your Dashboard, navigate to the icon menu (hint: look at the top right of the page!)</li>
+                    <li>Click <em>Account</em> to be taken to your Account page</li>
+                    <li>Select any of the icons and watch it become your avatar image!</li>
+                </ol>
+                <p><strong>PRONOUNS</strong></p>
+                <ol>
+                    <li>Staying on your Account page, navigate to the pronouns dropdown menu</li>
+                    <li>Open up the menu and select your preferred option</li>
+                    <li>Click on <em>Set as Pronouns</em></li>
+                </ol>
+            </div>
+            <div class="answer" id="answer5">
+                <p><strong>Visibility options - What do they mean?</strong></p>
+                <ul>
+                    <li><strong>Private</strong>: the project can only be viewed by yourself and invited users</li>
+                    <li><strong>Organisation</strong>: can be viewed by any user within your organisation</li>
+                    <li><strong>Public</strong>: can be viewed by any user of Pando Sketch</li>
+                </ul>
+                <p><strong>Roles - What are the different types?</strong></p>
+                <ul>
+                    <li><strong>Owner</strong>: full authority over the project with access to all whiteboard tools, can kick/ban and promote/demote users</li>
+                    <li><strong>Moderator</strong>: no permissions to edit project details, but can kick/ban and promote/demote users</li>
+                    <li><strong>Participant</strong>: can participate in the project but has no authority over it or its other users</li>
+                    <li><strong>Viewer</strong>: can explore the whiteboard and utilise the chat feature, but has no access to the whiteboard's tools</li>
+                </ul>
+            </div>
+            <div class="answer" id="answer6">
+                <p><strong>REQUEST A COPY OF / CHANGE / DELETE YOUR DATA</strong></p>
+                <ol>
+                    <li>From your Dashboard, navigate to the icon menu (hint: look at the top right of the page!)</li>
+                    <li>Click <em>Account</em> to be taken to your Account page</li>
+                    <li>Navigate to the buttons at the bottom of the page</li>
+                    <li>Click <em>Request</em> / <em>Change</em> / <em>Delete</em> to be taken to the Help Centre on the Pando Systems website (here!)</li>
+                    <li>With the <em>Reason for contact</em> already selected, simply fill in the rest of the form and click <em>Submit</em></li>
+                </ol>
+            </div>
+        </div>
+    </div>
+
 </div>
 
 
@@ -303,5 +414,4 @@
 <script src="assets/js/script.js"></script>
 <script src="assets/bootstrap/js/bootstrap.min.js"></script>
 </body>
-
 </html>

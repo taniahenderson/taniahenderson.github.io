@@ -132,29 +132,13 @@ function toggleText(elementId) {
     textElement.classList.toggle('visible');
 }
 
+// Toggle view status of the answers to the FAQs
+function showAnswer(id) {
+  var answers = document.getElementsByClassName("answer");
+  for (var i = 0; i < answers.length; i++) {
+    answers[i].classList.remove("visible");
+  }
 
-document.addEventListener('DOMContentLoaded', (event) => {
-  document.getElementById('contact-form').addEventListener('submit', function(e) {
-    console.log('Form submit event triggered');
-      e.preventDefault();
-
-      const formData = new FormData(this);
-
-      fetch(this.action, {
-          method: 'POST',
-          body: formData,
-      })
-      .then(response => {
-          if (response.ok) {
-              return response.json();
-          }
-          throw new Error('Network response was not ok.');
-      })
-      .then(data => {
-          console.log(data);
-      })
-      .catch(error => {
-          console.error('There has been a problem with your fetch operation:', error);
-      });
-  });
-});
+  var answerToShow = document.getElementById("answer" + id);
+  answerToShow.classList.add("visible");
+}
