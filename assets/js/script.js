@@ -78,7 +78,7 @@ function specificURL() {
   }
 
   if (modal) {
-    legalModal.style.display = "block";
+    legalModal.style.display = 'block';
   }
 }
 
@@ -92,36 +92,36 @@ document.addEventListener('DOMContentLoaded', specificURL);
 
 
 //Modal transitions for footer bar links
-var privModal = document.getElementById("privacy-modal");
-var legalModal = document.getElementById("legal-modal");
+var privModal = document.getElementById('privacy-modal');
+var legalModal = document.getElementById('legal-modal');
 
-var privLnk = document.getElementById("privacy");
-var legalLnk = document.getElementById("legal");
+var privLnk = document.getElementById('privacy');
+var legalLnk = document.getElementById('legal');
 
-var spanPriv = document.getElementById("close-privacy");
-var spanLegal = document.getElementById("close-legal");
+var spanPriv = document.getElementById('close-privacy');
+var spanLegal = document.getElementById('close-legal');
 
 privLnk.onclick = function() {
-  privModal.style.display = "block";
+  privModal.style.display = 'block';
 }
 
 legalLnk.onclick = function() {
-  legalModal.style.display = "block";
+  legalModal.style.display = 'block';
 }
 
 spanPriv.onclick = function() {
-  privModal.style.display = "none";
+  privModal.style.display = 'none';
 }
 
 spanLegal.onclick = function() {
-  legalModal.style.display = "none";
+  legalModal.style.display = 'none';
 }
 
 window.onclick = function(event) {
   if (event.target == privModal) {
-    privModal.style.display = "none";
+    privModal.style.display = 'none';
   } else if (event.target == legalModal) {
-    legalModal.style.display = "none";
+    legalModal.style.display = 'none';
   }
 }
 
@@ -133,12 +133,20 @@ function toggleText(elementId) {
 }
 
 // Toggle view status of the answers to the FAQs
+// Allows the selected link's text to change when 'active'
 function showAnswer(id) {
-  var answers = document.getElementsByClassName("answer");
+  var answers = document.getElementsByClassName('answer');
   for (var i = 0; i < answers.length; i++) {
-    answers[i].classList.remove("visible");
+    answers[i].classList.remove('visible');
   }
 
-  var answerToShow = document.getElementById("answer" + id);
-  answerToShow.classList.add("visible");
+  var answerToShow = document.getElementById('answer' + id);
+  answerToShow.classList.add('visible');
+
+  var links = document.getElementsByClassName('question-link');
+  for (var i = 0; i < links.length; i++) {
+    links[i].classList.remove('active-link');
+  }
+
+  links[id - 1].classList.add('active-link');
 }

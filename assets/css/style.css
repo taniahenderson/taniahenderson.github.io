@@ -478,10 +478,15 @@ input[type=submit] {
   display: block;
 }
 
+.active-link {
+  font-style: italic;
+}
+
 hr.solid {
   border-top: 5px solid white;
   border-right: none;
   border-radius: 5px;
+  opacity: 0.55;
 }
 
 
