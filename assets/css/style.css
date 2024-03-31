@@ -887,4 +887,11 @@ hr.solid {
     border-right: none;
     border-radius: 5px;
   }
+
+  /* https://www.tutorialspoint.com/targeting-only-firefox-with-css#:~:text=Using%20the%20Mozila%2Dspecific%20CSS,when%20opening%20the%20Firefox%20browser. */
+  @-moz-document url-prefix() {
+    #h-panel {
+      margin-bottom: 30px;
+    }
+ }
 }
