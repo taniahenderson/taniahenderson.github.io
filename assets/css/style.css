@@ -321,22 +321,6 @@ hr {
   font-size: 14px;
 }
 
-
-.divider-ver {
-  margin-top: 0px;
-  border-left: 5px solid white;
-  border-radius: 5px;
-  height: calc(100vh - 180px);
-}
-
-.divider-ver2 {
-  margin-top: 0px;
-  border-right: 3px solid white;
-  border-radius: 5px;
-  height: calc(100vh - 180px);
-}
-
-
 #help-page {
   justify-content: space-between;
 }
@@ -399,6 +383,7 @@ input[type=text], input[type=email] {
   box-sizing: border-box;
   border: none;
   float: left;
+  width: 100%;
 }
 
 textarea {
@@ -438,6 +423,7 @@ input[type=submit] {
 
 #form-div {
   width: 30%;
+  height: 93%;
 }
 
 #faqs {
@@ -445,15 +431,21 @@ input[type=submit] {
   display: flex;
 }
 
-#panel {
-  width: 30%;
+#panel, #h-panel {
+  width: 250px;
   height: 93%;
-  border-left: 5px solid white;
-  border-right: 2px solid white;
-  padding-left: 50px;
-  padding-right: 50px;
   display: flex;
   flex-direction: column;
+}
+
+#panel {
+  border-left: 3px solid white;
+  border-right: 1px solid white;
+}
+
+#h-panel {
+  padding-left: 50px;
+  padding-right: 50px;
 }
 
 #panel h2 {
@@ -486,8 +478,9 @@ input[type=submit] {
   display: block;
 }
 
-hr.dashed {
+hr.solid {
   border-top: 5px solid white;
+  border-right: none;
   border-radius: 5px;
 }
 
@@ -540,6 +533,114 @@ hr.dashed {
   width: 25px;
   height: 25px;
   margin-right: 20px;
+}
+
+.divider, .divider2 {
+  display: none;
+}
+
+
+
+/* Responsive to tablet screens */
+@media screen and (max-width: 850px) {
+  #help-page {
+    flex-direction: column;
+    row-gap: 130px;
+  }
+
+  #form-div {
+    width: 100%;
+  }
+
+  legend {
+    font-size: 18px;
+  }
+
+  legend::before, legend::after {
+    top: 12px;
+  }
+
+  .fields-pair {
+    width: 100%;
+    box-sizing: border-box;
+  }
+
+  input[type="text"], input[type="email"], select, textarea {
+    width: 100%;
+  }
+
+  select {
+    height: 30px;
+  }
+
+  .fields-row {
+    flex-direction: column;
+  }
+
+  input[type="file"], input[type="button"] {
+    width: 100%;
+  }
+
+  fieldset {
+    margin-bottom: 45px;
+  }
+
+  .divider, .divider2 {
+    font-size: 30px;
+    display: flex;
+    align-items: center;
+    color: white;
+  }
+  
+  .divider::before, .divider::after {
+    flex: 1;
+    content: '';
+    padding: 2px;
+    background-color: white;
+    margin: 5px;
+  }
+
+  .divider2 {
+    background-color: white;
+    padding: 1px;
+    flex: 1;
+  }
+
+  #faqs {
+    width: 100%;
+    flex-direction: column;
+    margin-bottom: 60px;
+  }
+
+  #panel, #h-panel {
+    width: 100%;
+    border: none;
+  }
+
+  #h-panel {
+    flex-direction: row;
+    text-align: center;
+    padding: 0px;
+  }
+
+  #h-panel a {
+    padding: 0px 10px;
+  }
+
+  #panel h2 {
+    display: none;
+  }
+
+  #shown-answer {
+    width: 100%;
+    margin-top: 30px;
+  }
+
+  hr.solid {
+    border-right: 5px solid white;
+    border-top: none;
+  }
+
 }
 
 
@@ -706,51 +807,6 @@ hr.dashed {
     margin: 0px auto;
   }
 
-  legend {
-    font-size: 18px;
-  }
-
-  legend::before, legend::after {
-    top: 12px;
-  }
-
-  .fields-pair {
-    width: 100%;
-    box-sizing: border-box;
-  }
-
-  input[type="text"], input[type="email"], select, textarea {
-    width: 100%;
-  }
-
-  /* https://stackoverflow.com/questions/20656114/how-to-increase-height-of-a-select */
-  select {
-    -webkit-appearance: menulist-button;
-    height: 30px;
-  }
-
-  .fields-row {
-    flex-direction: column;
-  }
-
-  input[type="file"], input[type="button"] {
-    width: 100%;
-  }
-
-  fieldset {
-    margin-bottom: 45px;
-  }
-
-  #form-div {
-    width: 100%;
-  }
-  
-  #faqs {
-    display: none;
-  }
-
-
-
   .modal-content h2 {
     font-size: 15px;
   }
@@ -817,5 +873,18 @@ hr.dashed {
   .logo-links img {
     width: 14px;
     height: 14px;
+  }
+
+  #h-panel {
+    flex-direction: column;
+    row-gap: 20px;
+    padding-right: 50px;
+    padding-left: 50px;
+  }
+
+  hr.solid {
+    border-top: 5px solid white;
+    border-right: none;
+    border-radius: 5px;
   }
 }
